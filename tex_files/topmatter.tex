@@ -1,0 +1,116 @@
+\usepackage{transparent}
+\usepackage{background}
+\usepackage{helvet}
+%\usepackage[scaled]{uarial}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\usepackage[numbers]{natbib}
+\usepackage{calc}
+\usepackage[english]{babel}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[papername=a0paper, left = 1.5cm, right = 1.5cm, top = 1.5cm, bottom = 1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{subfig}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+
+\def \vs {\vspace{10pt}}
+\def \vms {\vspace{-10pt}}
+\def \vbs {\vs\vs}
+\def \dist {3.5}
+\def \bwidth {0.32\textwidth}
+\def \bheight {0.035\textheight}
+\def \tfont {\fontsize{24}{29}\selectfont}
+\def \ffont	{\fontsize{18}{21.6}\selectfont}
+\def \lfont {\fontsize{18}{22}\selectfont}
+\def \spacer {\vs\par\vfill}
+
+\tikzstyle{line} = [draw, very thick]
+\tikzstyle{arrow} = [draw, -latex', line width = 5pt,line cap=round]
+\tikzstyle{rarrow} = [draw, -latex',line width = 5pt,draw=red,line cap=round]
+\tikzstyle{garrow} = [draw, -latex',line width = 5pt,draw=green,line cap=round]
+\tikzstyle{block} = [rectangle, text width=(\bwidth/1.2), minimum height=(\bheight/1.4), align=flush center, draw=black, fill=white]
+\tikzstyle{cblock} = [circle, text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=white, text=black]
+\tikzstyle{yblock} = [circle, text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=yellow, text=black]
+\tikzstyle{rblock} = [ellipse, text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=red, text=black]
+\tikzstyle{gblock} = [ellipse, text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=green, text=black]
+\tikzstyle{recblock} = [rectangle, align=flush center]
+\tikzstyle{wrblock} = [text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=white, text=black]
+\tikzstyle{rrblock} = [text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=lred, text=black]
+\tikzstyle{grblock} = [text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=lgreen, text=black]
+\tikzstyle{brblock} = [text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=lblue, text=black]
+\tikzstyle{rbarrow} = [draw, -latex',very thick,draw=lred]
+\tikzstyle{gbarrow} = [draw, -latex',very thick,draw=lgreen]
+\tikzstyle{bbarrow} = [draw, -latex',very thick,draw=lblue]
+
+\titleformat{\section}{\fontsize{36}{43}\selectfont\bfseries\raggedright\color{dblue}}{\thesection}{0.5em}{}
+
+\setlength\fboxsep{30.0pt}
+\setlength\fboxrule{2.0pt}
+
+\definecolor{aqua}{RGB}{197,231,235}
+\definecolor{lblue}{RGB}{170,216,240}
+\definecolor{dblue}{RGB}{0,102,178}
+\definecolor{dred}{rgb}{0.5,0.0,0.0}
+\definecolor{dgreen}{rgb}{0.0,0.5,0.0}
+\definecolor{lgreen}{RGB}{170,240,216}
+\definecolor{blue}{RGB}{0,0,125}
+\definecolor{green}{RGB}{0,90,0}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{brown}{RGB}{148,100,31}
+
+\newcounter{blockcounter}
+\stepcounter{blockcounter}
+
+\newenvironment {blockbody} { \transparent{1.0}\begin{minipage} [t] {0.44\textwidth} \pretolerance=10000 \tolerance=2000 \emergencystretch=10pt \setlength{\parskip}{10pt}} { \end{minipage} }
+%\newenvironment {blockbody} { \begin{minipage} [t] {0.29\textwidth} \setlength{\parskip}{10pt}} { \end{minipage} }
+
+\newcommand{\head} [1]
+{
+	{\bfseries\arabic{blockcounter}. #1 }
+	
+	\vs
+	\stepcounter{blockcounter}
+}
+
+\newcommand{\block} [1] {\transparent{0.8}\fcolorbox{dblue}{white}{#1}}
+
+\renewcommand{\sp}[1]{\textsuperscript{#1}}
+%\renewcommand{\sb}[1]{\textsuperscript{_{#1}}}
+
+%\pagecolor{lblue}
+\backgroundsetup{contents=\includegraphics{CRICK_Brandmark_06_RGB}, scale=5.34, angle=0, placement=bottom, vshift=15pt}
+\pagestyle{empty}
+
+\def \title {
+	%\setlength\fboxsep{50.0pt}
+	\fcolorbox{dblue}{aqua}{
+		\begin{minipage}[c][0.08\textheight][c]{\textwidth-135pt}
+			\begin{minipage}{0.89\textwidth}
+				\centering
+                \color{dblue}
+				\fontsize{54pt}{38pt}\selectfont
+				\textbf{GIANI: open-source software for automated analysis of 3D microscopy data} \par
+                \vs
+				\color{black}
+                \fontsize{40pt}{28pt}\selectfont
+				David J. Barry\sp{1} \& Claudia Gerri\sp{2} \par
+                \vs
+				\fontsize{28pt}{20pt}\selectfont
+				\sp{1}Crick Advanced Light Microscopy \& \sp{2}Human Embryo and Stem Cell Laboratory, Francis Crick Institute, 1 Midland Road, London,  NW1 1AT, UK.\par
+			\end{minipage} \hfill
+			\begin{minipage}{0.08\textwidth}
+				\includegraphics[width=\textwidth]{CRICKblack}\par
+			\end{minipage}\par
+		\end{minipage}\par
+	}
+}
+
+%\tikzstyle{line} = [draw, very thick]
+%\tikzstyle{arrow} = [draw, -latex',very thick]
+%\tikzstyle{block} = [rectangle, text width=(\bwidth/1.8), minimum height=(\bwidth/3.6), align=flush center]
+
+\graphicspath{{./figs/}
+{./images/}}
