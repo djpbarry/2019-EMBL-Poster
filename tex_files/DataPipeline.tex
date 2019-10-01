@@ -1,0 +1,8 @@
+\def \bwidth {\unitlength}
+\begin{tikzpicture}[every node/.style={inner sep=0}]
+    \node (input) at (0.0, 0.0) {\includegraphics[width=0.3\unitlength]{images/ExampleSlice.png}};
+    \node (nuc) at (0.33\unitlength, 0.0) {\includegraphics[width=0.3\unitlength]{images/NucSeg.png}};
+    \node (cells) at (0.66\unitlength, 0.0) {\includegraphics[width=0.3\unitlength]{images/CellSeg.png}};
+    \path[arrow] (input) -- (nuc);
+    \path[arrow] (nuc) -- (cells);
+\end{tikzpicture}\par

@@ -1,0 +1,12 @@
+\def \bwidth {0.18\unitlength}
+\begin{tikzpicture}[every node/.style={inner sep=0}]
+    \node[block, text width=\bwidth] (input) at (0.0, 0.0) {Input Directory};
+    \node[block, text width=\bwidth] (nuc) at (0.205\unitlength, 0.0) {Detect Nuclei};
+    \node[block, text width=\bwidth] (cells) at (0.41\unitlength, 0.0) {Detect Cells};    
+    \node[block, text width=\bwidth] (measure) at (0.615\unitlength, 0.0) {Measure};   
+    \node[block, text width=\bwidth] (save) at (0.82\unitlength, 0.0) {Store Data};   
+    \path[arrow] (input) -- (nuc);
+    \path[arrow] (nuc) -- (cells);
+    \path[arrow] (cells) -- (measure);
+    \path[arrow] (measure) -- (save);
+\end{tikzpicture}\par

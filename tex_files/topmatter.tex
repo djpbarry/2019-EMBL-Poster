@@ -20,7 +20,7 @@
 \def \vms {\vspace{-10pt}}
 \def \vbs {\vs\vs}
 \def \dist {3.5}
-\def \bwidth {0.32\textwidth}
+\def \bwidth {0.18\textwidth}
 \def \bheight {0.035\textheight}
 \def \tfont {\fontsize{24}{29}\selectfont}
 \def \ffont	{\fontsize{18}{21.6}\selectfont}
@@ -31,7 +31,7 @@
 \tikzstyle{arrow} = [draw, -latex', line width = 5pt,line cap=round]
 \tikzstyle{rarrow} = [draw, -latex',line width = 5pt,draw=red,line cap=round]
 \tikzstyle{garrow} = [draw, -latex',line width = 5pt,draw=green,line cap=round]
-\tikzstyle{block} = [rectangle, text width=(\bwidth/1.2), minimum height=(\bheight/1.4), align=flush center, draw=black, fill=white]
+\tikzstyle{block} = [rectangle, minimum height=(\bheight/1.2), align=flush center, draw=black, fill=white]
 \tikzstyle{cblock} = [circle, text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=white, text=black]
 \tikzstyle{yblock} = [circle, text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=yellow, text=black]
 \tikzstyle{rblock} = [ellipse, text width=(\bwidth), minimum height=(\bheight), align=flush center, fill=red, text=black]
@@ -75,33 +75,33 @@
 	\stepcounter{blockcounter}
 }
 
-\newcommand{\block} [1] {\transparent{0.8}\fcolorbox{dblue}{white}{#1}}
+\newcommand{\block} [1] {\transparent{0.7}\fcolorbox{dblue}{white}{#1}}
 
 \renewcommand{\sp}[1]{\textsuperscript{#1}}
 %\renewcommand{\sb}[1]{\textsuperscript{_{#1}}}
 
-%\pagecolor{lblue}
+%\pagecolor{black}
 \backgroundsetup{contents=\includegraphics{CRICK_Brandmark_06_RGB}, scale=5.34, angle=0, placement=bottom, vshift=15pt}
 \pagestyle{empty}
 
 \def \title {
 	%\setlength\fboxsep{50.0pt}
 	\fcolorbox{dblue}{aqua}{
-		\begin{minipage}[c][0.08\textheight][c]{\textwidth-135pt}
-			\begin{minipage}{0.89\textwidth}
+		\begin{minipage}[c][0.075\textheight][c]{\textwidth-127pt}
+			\begin{minipage}{0.87\textwidth}
 				\centering
                 \color{dblue}
-				\fontsize{54pt}{38pt}\selectfont
+				\fontsize{53pt}{37pt}\selectfont
 				\textbf{GIANI: open-source software for automated analysis of 3D microscopy data} \par
-                \vs
+                \vs\vs\vs
 				\color{black}
                 \fontsize{40pt}{28pt}\selectfont
-				David J. Barry\sp{1} \& Claudia Gerri\sp{2} \par
-                \vs
+				David J. Barry\sp{1}, Claudia Gerri\sp{2} \& Kathy K. Niakan\sp{2}\par
+                \vs\vs\vs
 				\fontsize{28pt}{20pt}\selectfont
 				\sp{1}Crick Advanced Light Microscopy \& \sp{2}Human Embryo and Stem Cell Laboratory, Francis Crick Institute, 1 Midland Road, London,  NW1 1AT, UK.\par
 			\end{minipage} \hfill
-			\begin{minipage}{0.08\textwidth}
+			\begin{minipage}{0.1\textwidth}
 				\includegraphics[width=\textwidth]{CRICKblack}\par
 			\end{minipage}\par
 		\end{minipage}\par
